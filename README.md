@@ -10,7 +10,9 @@
 
 支持 iOS 16及以上。
 
-https://www.icloud.com/shortcuts/5b6f8f605fb641dab94e75be309468de
+> Update at March 4, 2025.
+
+https://www.icloud.com/shortcuts/748ca1821e85476dbb4b179eb6424bd6
 
 > ### 配置
 >
@@ -170,7 +172,7 @@ nas_ip=[该参数可不添加]
 double_stack=0[该参数可不添加]
 chksum=xxxxxxxxxxxxxxxxxxx（SHA1加密后的内容）
 info={SRBX1}xxxxxxxxxyyyyyyyyyyzzzzzzzzz（基于Base64编码后的用户信息）
-ac_id=12
+ac_id=12（有线连接为12，无线连接为2）
 ip=当前设备的IP地址（必须与设备ip一致）
 n=200
 type=1
@@ -227,7 +229,7 @@ chksum字段是字符串`str`进行SHA1的密文。
 ### str的构成
 
 `str = token + username + token + hmd5 + token + ac_id + token + ip + token + n + token + type + token + i`
-`token`是第三步获取到的**Hash盐值**（即challenge），`username`是登录**用户名**（学号或校园卡号），`hmd5`是采用HMAC-MD5**加密后的密码**，`ac_id`是**12**（应该是套餐信息），`ip`是当前**设备的IP**，`n`是**200**（加密常量），`type`是**1**（加密常量），`i`是**info字段**（包含`{SRBX1}`）
+`token`是第三步获取到的**Hash盐值**（即challenge），`username`是登录**用户名**（学号或校园卡号），`hmd5`是采用HMAC-MD5**加密后的密码**，`ac_id`是**12或2**（有线是12，无线是2），`ip`是当前**设备的IP**，`n`是**200**（加密常量），`type`是**1**（加密常量），`i`是**info字段**（包含`{SRBX1}`）
 
 ### info字段的构造
 
